@@ -1,0 +1,276 @@
+
+:root {
+  --TablePartsColor: rgb(38, 61, 84);
+  --BorderColor: gray;
+  --componentFontColor: white;
+  --BlackFont: black;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f8db1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  text-align: center; /* Optional: center-align text */
+  width: 50px; /* Adjust width as needed */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+
+body {
+  background: #b4a9ff;
+  color: var(--BlackFont);
+  text-align: center;
+  font-family: 'Pacaembu-Bold';
+  margin: 0%;
+}
+
+@font-face {
+  font-family: 'Pacaembu-Bold';
+  src: url('assets/Fonts/Poppins-Bold.ttf') format('opentype');
+}
+
+table {
+  border: 7px solid var(--TablePartsColor);
+  border-radius: 10px;
+  align-self: center;
+  margin-top: 3.5%;
+  font-size: medium;
+}
+
+.cube {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  color: var(--componentFontColor);
+  border-radius: 10px;
+}
+
+.front {
+  background-color: var(--TablePartsColor);
+  /*354   364*/
+  transform: rotateY(0deg);
+}
+
+.back {
+  background-color: var(--TablePartsColor);
+  transform: rotateY(180deg);
+}
+
+.cube.flip {
+  transform: rotateY(180deg);
+}
+
+main {
+  display: flex;
+}
+
+textarea::-webkit-scrollbar {
+  width: 5px;
+}
+
+textarea {
+  width: 95%;
+  align-self: center;
+  height: 60px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px var(--BorderColor) solid;
+  font-family: 'Pacaembu-Bold';
+  resize: none;
+}
+
+input {
+  width: 25%;
+  align-self: center;
+  margin: 3%;
+  height: 40px;
+  padding-left: 5px;
+  border-radius: 10px;
+  border: 2px var(--BorderColor) solid;
+  font-family: 'Pacaembu-Bold';
+}
+
+button {
+  align-self: center;
+  margin: 3%;
+  padding: 13px 20px;
+  border-radius: 10px;
+  border: 1px var(--BorderColor) solid;
+  background-color: #4681f4;
+  color: var(--componentFontColor);
+  transition: background-color 0.3s;
+  font-family: 'Pacaembu-Bold';
+  letter-spacing: 1.5px;
+  /* Adjust the value as needed */
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #55c2da;
+  color: var(--BlackFont);
+
+}
+
+#CipherText {
+  margin-bottom: 8%;
+  display: inline;
+}
+
+.nextnextdiv{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  word-wrap: break-word;
+}
+
+@media (min-width: 700px) {
+  .nextnextdiv{ 
+    flex-direction: row;
+    margin-top: 25px;
+  }
+  #nexDivP {
+    width: 60%;
+  }
+  main {
+    flex-direction: row;
+  }
+
+  h6 {
+    margin: 3% 0;
+  }
+
+  .para2 {
+    width: 60%;
+  }
+
+  body {
+    padding: 0% 5%;
+  }
+}
+
+@media (max-width: 700px) {
+  #mainDiv {
+    max-height: 1200px;
+  }
+  .nextnextdiv{ 
+    flex-direction: column;
+  }
+  table {
+    margin-left: 5%;
+  }
+  .cube {
+    display: block;
+    margin: 0 auto;
+  }
+  td {
+    display: block;
+    text-align: center;
+  }
+  .nextdiv {
+    transform: translateY(-1030px) translateX(100px);
+    width:65%;
+    place-content: center;
+  }
+  main {
+    flex-direction: column;
+  }
+
+  h6 {
+    margin: 10%;
+  }
+
+  input {
+    width: 50%;
+  }
+
+  .para3 {
+    text-align: left !important;
+  }
+
+  .para2 {
+    width: 80%;
+  }
+
+  #CipherText {
+    margin-right: 2%;
+  }
+}
+
+.scroll-down-container {
+  margin-top: 0px;
+  position: relative;
+  height: 100;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* Initially hidden */
+}
+
+.scroll-down {
+  text-decoration: none;
+  font-size: 0.7em;
+  color: #333;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+#CipherText p {
+  font-size: x-large;
+  cursor: pointer;
+  display: inline-flex;
+  margin: 0 2px;
+}
